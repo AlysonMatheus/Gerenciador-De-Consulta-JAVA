@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Médico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0217d4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #0217d4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #015bb5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0217d4;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>Cadastro de Médico</h2>
+</header>
+
+<div class="container">
+    <h1>Preencha os dados do médico</h1>
+    <form action="#" th:action="@{/medicos}" method="post">
+        <!-- Campo para nome -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" th:value="${medico.nome}" required placeholder="Digite o nome completo">
+
+        <!-- Campo para CRM -->
+        <label for="crm">CRM:</label>
+        <input type="text" id="crm" name="crm" th:value="${medico.crm}" required placeholder="Digite o CRM">
+
+        <!-- Campo para especialidade -->
+        <label for="especialidade">Especialidade:</label>
+        <select id="especialidade" name="especialidade" required th:value="${medico.especialidade}">
+            <option value="">Selecione uma especialidade</option>
+            <option value="Cardiologia" th:text="'Cardiologia'">Cardiologia</option>
+            <option value="Dermatologia" th:text="'Dermatologia'">Dermatologia</option>
+            <option value="Pediatria" th:text="'Pediatria'">Pediatria</option>
+            <option value="Ortopedia" th:text="'Ortopedia'">Ortopedia</option>
+            <option value="Neurologia" th:text="'Neurologia'">Neurologia</option>
+        </select>
+
+        <!-- Campo para email -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" th:value="${medico.email}" required placeholder="Digite o e-mail do médico">
+
+        <!-- Campo para telefone -->
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" th:value="${medico.telefone}" required placeholder="Digite o telefone do médico">
+
+        <button type="submit">Cadastrar Médico</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sistema de Gerenciamento de Consultas</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Consultas</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #0217d4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        article {
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        h1.titulo {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        input[type="button"] {
+            width: 250px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            margin: 5px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0217d4;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>Consultas e Agendamentos</h2>
+</header>
+
+<article id="corpo">
+    <h1 class="titulo">
+        Gerenciamento de Consultas
+    </h1>
+    <input type="button" value="Cadastrar Consulta" onclick="window.location.href='cadastroconsulta.html';">
+
+
+    <input type="button" value="Cadastrar Paciente"onclick="window.location.href='cadastropaciente.html'";> 
+    <input type="button" value="Relatório de Consultas"onclick="window.location.href='relatorioconsultas.html'";>
+    <input type="button" value="Agendamentos"onclick="window.location.href='relatorioconsultas.html'">
+    <input type="button" value="Cadastrar Médico"onclick="window.location.href='cadastrarmedico.html'">
+</article>
+
+<footer>
+    <p>&copy; 2024 Sistema de Gerenciamento de Consultas</p>
+</footer>
+
+</body>
+</html>

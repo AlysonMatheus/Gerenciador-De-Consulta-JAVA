@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Consultas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        thead th {
+            background-color: #0217d4;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+        }
+
+        tbody td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .action-buttons button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .edit-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <h1>Agendamentos de Consultas</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Paciente</th>
+                <th>Médico</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Exemplo de dados de consulta -->
+            <tr>
+                <td>1</td>
+                <td>Nome do Paciente</td>
+                <td>Nome do Médico</td>
+                <td>01/01/2024</td>
+                <td>10:00</td>
+                <td>Descrição da consulta</td>
+                <td class="action-buttons">
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Remover</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Paciente Exemplo</td>
+                <td>Médico Exemplo</td>
+                <td>02/01/2024</td>
+                <td>11:00</td>
+                <td>Consulta de rotina</td>
+                <td class="action-buttons">
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Remover</button>
+                </td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+    </table>
+
+    <!-- Botão de voltar -->
+    <button class="back-btn" onclick="window.history.back()">Voltar</button>
+</body>
+</html>
