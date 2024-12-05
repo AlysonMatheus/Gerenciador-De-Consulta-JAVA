@@ -10,7 +10,7 @@ import com.example.Consulta.Model.Consulta;
 public class RelatorioController {
     public String showForm(Model model) {
         model.addAttribute("paciente", new Consulta());  // Cria um novo objeto paciente
-        return "cadastroPaciente";  // Retorna a página Thymeleaf
+        return "relatoriosconsultas";  // Retorna a página Thymeleaf
     }
 
     @PostMapping("/relatorios")
