@@ -24,17 +24,17 @@ public class ConsultaServico {
 
     // Método para remover uma consulta
     public static void removerConsulta(Long id) {
-        // Remove a consulta pela comparação do ID (não pelo CPF)
+        
         consultas.removeIf(c -> c.getId() == id);  // Usando == para comparação de tipos primitivos
     }
 
 
-    // Método para buscar todas as consultas
+   
     public static List<Consulta> buscarTodasConsultas() {
         return consultas;  // Retorna todas as consultas (deve retornar do banco, por exemplo)
     }
 
-    // Exemplo de um método para adicionar consultas à lista
+   
     public static void adicionarConsulta(Consulta consulta) {
         consultas.add(consulta);  // Adiciona uma nova consulta à lista (simula um insert no banco)
     }

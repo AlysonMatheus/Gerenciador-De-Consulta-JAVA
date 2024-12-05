@@ -37,7 +37,8 @@ public class ConsultaController {
     @GetMapping("/editarConsulta/{id}")
     public String editarConsulta(@PathVariable Long id, Model model) {
         // Lógica para editar a consulta
-        Consulta consulta =  ConsultaServico.buscarConsultaPorId(id);
+        Consulta consulta;
+        consulta = ConsultaServico.buscarConsultaPorId(id);
         model.addAttribute("consulta", consulta);
         return "editarConsulta";  // Página para editar
     }
