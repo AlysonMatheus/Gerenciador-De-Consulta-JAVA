@@ -78,4 +78,9 @@ public class Medico {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public void addAttribute(String string, Medico medico) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addAttribute'");
+    }
 }
