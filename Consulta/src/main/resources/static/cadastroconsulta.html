@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +7,14 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f4f4f9;
         }
 
-        /* Container principal */
         .form-container {
             max-width: 500px;
             padding: 30px;
@@ -24,14 +23,12 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        /* Estilo do título */
         h1 {
             text-align: center;
             color: #333;
             margin-bottom: 20px;
         }
 
-        /* Formulário */
         form {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -43,7 +40,6 @@
             color: #555;
         }
 
-        /* Inputs */
         input[type="text"],
         input[type="date"],
         input[type="search"],
@@ -55,7 +51,6 @@
             box-sizing: border-box;
         }
 
-        /* Botão */
         button {
             grid-column: span 2;
             padding: 10px;
@@ -71,7 +66,6 @@
             background-color: #0217d4;
         }
 
-        /* Alinhamento dos campos */
         .full-width {
             grid-column: span 2;
         }
@@ -80,25 +74,29 @@
 <body>
     <div class="form-container">
         <h1>Cadastro de Consultas</h1>
-        <form action="">
+        <form action="#" method="post" th:action="@{/consulta/cadastrar}" th:object="${consulta}">
+            <!-- Nome -->
             <label for="Nome">Nome</label>
-            <input type="text" name="Nome" id="Nome" placeholder="Digite o nome completo">
+            <input type="text" name="Nome" id="Nome" placeholder="Digite o nome completo" th:value="*{Nome}">
 
+            <!-- Sexo -->
             <label for="Sexo">Sexo</label>
-            <select name="Sexo" id="Sexo">
+            <select name="Sexo" id="Sexo" th:value="*{Sexo}">
                 <option value="">Selecione</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
                 <option value="Outro">Outro</option>
             </select>
 
+            <!-- CPF -->
             <label for="CPF">CPF</label>
-            <input type="text" name="CPF" id="CPF" placeholder="Ex: 123.456.789-00">
+            <input type="text" name="CPF" id="CPF" placeholder="Ex: 123.456.789-00" th:value="*{CPF}">
 
-
+            <!-- Descrição da Consulta -->
             <label for="descricao" class="full-width">Descrição da Consulta</label>
-            <input type="search" name="descricao" id="descricao" class="full-width" placeholder="Detalhes sobre a consulta">
+            <input type="search" name="descricao" id="descricao" class="full-width" placeholder="Detalhes sobre a consulta" th:value="*{descricao}">
 
+            <!-- Botão -->
             <button type="submit">Cadastrar Consulta</button>
         </form>
     </div>

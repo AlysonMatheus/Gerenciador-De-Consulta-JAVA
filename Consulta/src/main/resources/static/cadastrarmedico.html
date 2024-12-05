@@ -100,7 +100,7 @@
 
         <!-- Campo para especialidade -->
         <label for="especialidade">Especialidade:</label>
-        <select id="especialidade" name="especialidade" required th:value="${medico.especialidade}">
+        <select id="especialidade" name="especialidade" required th:value="${especialidade}">
             <option value="">Selecione uma especialidade</option>
             <option value="Cardiologia" th:text="'Cardiologia'">Cardiologia</option>
             <option value="Dermatologia" th:text="'Dermatologia'">Dermatologia</option>
@@ -111,11 +111,11 @@
 
         <!-- Campo para email -->
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" th:value="${medico.email}" required placeholder="Digite o e-mail do médico">
+        <input type="email" id="email" name="email" th:value="${email}" required placeholder="Digite o e-mail do médico">
 
         <!-- Campo para telefone -->
         <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" th:value="${medico.telefone}" required placeholder="Digite o telefone do médico">
+        <input type="tel" id="telefone" name="telefone" th:value="${telefone}" required placeholder="Digite o telefone do médico">
 
         <button type="submit">Cadastrar Médico</button>
     </form>
