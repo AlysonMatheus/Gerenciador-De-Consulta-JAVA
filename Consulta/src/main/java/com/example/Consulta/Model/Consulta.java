@@ -1,7 +1,6 @@
 package com.example.Consulta.Model;
 
 import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -11,6 +10,9 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "consulta")
 public class Consulta extends Paciente {
+    
+    @Column(name = "id", nullable = false)
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "medico_id", nullable = false)
@@ -25,13 +27,13 @@ public class Consulta extends Paciente {
     @Column(name = "descricao", length = 255)
     private String descricao;
 
-    // Construtor
-   
-
+    // Construtor padrão
     public Consulta() {}
 
-    public Consulta(LocalDate dataConsulta, String descricao, String horaConsulta, Medico medico, String cpf, LocalDate data, LocalDate dataNascimento, String nome, String telefone) {
-        super(cpf, data, dataNascimento, nome, telefone);
+    // Construtor com todos os atributos
+    public Consulta(LocalDate dataConsulta, String descricao, String horaConsulta, Medico medico, 
+                    String cpf, LocalDate data, LocalDate dataNascimento, String nome, String telefone) {
+        super(cpf, data, dataNascimento, nome, telefone); // Chama o construtor da classe Paciente
         this.dataConsulta = dataConsulta;
         this.descricao = descricao;
         this.horaConsulta = horaConsulta;
@@ -39,6 +41,14 @@ public class Consulta extends Paciente {
     }
 
     // Getters e Setters
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public Medico getMedico() {
         return medico;
