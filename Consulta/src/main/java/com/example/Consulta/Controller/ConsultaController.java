@@ -15,38 +15,38 @@ import com.example.Consulta.servicos.ConsultaServico;
 @Controller
 public class ConsultaController {
 
-    @GetMapping("/consulta/cadastrar")
-    public String showForm(Model model) {
-        model.addAttribute("consulta", new Consulta());  // Cria um novo objeto consulta
-        return "cadastroConsulta";  // Retorna a página Thymeleaf
+             @GetMapping("/consulta/cadastrar")
+              public String showForm(Model model) {
+                model.addAttribute("consulta", new Consulta());  // Cria um novo objeto consulta
+              return "cadastroConsulta";  // Retorna a página Thymeleaf
     }
 
     @PostMapping("/consulta/cadastrar")
     public String cadastrarConsulta(@ModelAttribute Consulta consulta) {
         
-        return "redirect:/consulta/confirmacao";  
+        return "consulta/telainicial";  
     }
        @GetMapping("/relatorioConsultas")
     public String mostrarRelatorio(Model model) {
-        // Obter a lista de consultas do banco de dados
+       
         List<Consulta> consultas = ConsultaServico.buscarTodasConsultas();
-        model.addAttribute("consultas", consultas);  // Atributo para Thymeleaf
+        model.addAttribute("consultas", consultas);  
         return "relatorioConsultas";  // Nome do template
     }
 
-    @GetMapping("/editarConsulta/{id}")
+    @GetMapping("/relatorios/{id}")
     public String editarConsulta(@PathVariable Long id, Model model) {
-        // Lógica para editar a consulta
+        
         Consulta consulta;
         consulta = ConsultaServico.buscarConsultaPorId(id);
         model.addAttribute("consulta", consulta);
-        return "editarConsulta";  // Página para editar
+        return "relatoriosconsulta";  // Página para editar
     }
 
     @GetMapping("/removerConsulta/{id}")
     public String removerConsulta(@PathVariable Long id) {
-        // Lógica para remover a consulta
+       
         ConsultaServico.removerConsulta(id);
-        return "redirect:/relatorioConsultas";  // Redireciona para a lista
+        return "relatorioConsultas";  // Redireciona para a lista
     }
 }

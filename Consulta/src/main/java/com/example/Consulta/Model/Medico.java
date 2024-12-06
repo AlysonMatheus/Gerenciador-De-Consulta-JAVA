@@ -80,7 +80,7 @@ public class Medico {
     }
 
     public void addAttribute(String string, Medico medico) {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'addAttribute'");
     }
 }
